@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="header d-flex flex-row"></div>
+
+  <div class="container" id="info-box">
+    <p>
+      Enter a food and quantity to get information about its nutritional value
+    </p>
+    <hr />
+    <form (submit)="onSubmitForm(form)" #form="ngForm">
+      <input
+        class="form-control"
+        placeholder="e.g. Big Mac"
+        name="recipe"
+        type="text"
+        [(ngModel)]="recipeInput"
+      />
+      <button class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="results" id="results">
+      <app-food *ngFor="let food of foods" [food]="food"></app-food>
+    </div>
+  </div>
+</div>
